@@ -1,0 +1,23 @@
+ALGORITHM AnalyzeSentence
+VAR
+    word_count :INTEGER := 1;
+    vowel_count:INTEGER := 0;
+    vowels :STRING := "aeiouAEIOU";
+    sentence:STRING;
+    i :INTEGER;
+BEGIN
+    read(sentence);
+    FOR i FROM 0 TO length(sentence)-1 DO
+        IF sentence[i] == '.'THEN
+            break    
+        ELSE_IF sentence[i] == ' 'THEN
+            word_count += 1;
+        
+        ELSE_IF sentence[i] in vowels:
+            vowel_count += 1; 
+        END_IF  
+    END_FOR
+    write("Length of the sentence:", length(sentence));
+    write("Number of words:", word_count);
+    write("Number of vowels:", vowel_count);
+END
